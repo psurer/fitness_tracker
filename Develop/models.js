@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-let exercise = new Schema(
+let exerciseSchema = new Schema(
   {
     type:{
         type: String
@@ -23,6 +23,14 @@ let exercise = new Schema(
         type: Number
     }
   },
-  { collection: "Workout" }
 );
-module.exports = mongoose.model("exercises", exercise);
+
+let workoutSchema = new Schema({
+  day: {
+    type: Date
+  },
+  exercises:{
+    type: [exerciseSchema]
+  }
+});
+module.exports = mongoose.model("workout", workoutSchema);
