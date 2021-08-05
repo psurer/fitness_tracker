@@ -5,9 +5,9 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "watch": "nodemon server.js",
-    "seed": "node seeders/seed.js"
+    "start": "cd ./Develop && node server.js",
+    "watch": "cd ./Develop && nodemon server.js",
+    "seed": "cd ./Develop && node ./seeders/seed.js"
   },
   "author": "",
   "license": "ISC",
